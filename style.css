@@ -1,1 +1,63 @@
+header {
+  background-color: #008080;
+  color: #FFFFFF;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+  border: 5px solid #191970;
+  box-sizing: border-box;
+}
 
+main {
+  background-color: #000000;
+  color: #4FB4FF;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Regra principal para colocar a imagem e o texto lado a lado */
+article {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* Trava o tamanho exato da imagem para não cobrir a tela */
+article img {
+  width: 120px !important;
+  height: 120px !important;
+  max-width: 120px !important;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.artigo-autor {
+  font-weight: bold;
+}
+
+/* ======================================================
+   REGRAS ADICIONADAS PARA O DARK MODE
+   ====================================================== */
+
+/* Altera o fundo da página inteira quando o modo escuro está ativo */
+body.dark-mode {
+  background-color: #121212;
+}
+
+/* Altera as cores do header no Dark Mode */
+body.dark-mode header {
+  background-color: #0d3b3b;
+  border-color: #000080;
+  color: #ffffff;
+}
+
+/* Altera as cores do main no Dark Mode */
+body.dark-mode main {
+  background-color: #1a1a1a;
+  color: #8ed0ff;
+}
