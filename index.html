@@ -39,6 +39,7 @@ font-weight: bold;
     <header>
   <h1>Falando de Honkai: Star Rail</h1>
   <p1>Aqui vou compartilhar ideias, teorias, opinião detalhes da história de Honkai: Star Rail.</p1>
+      <button id="botaoTema">🌙 Dark Mode</button>
       </header>
     <main>
       <article>
@@ -76,6 +77,19 @@ font-weight: bold;
         }
       });
     });
+     const botaoTema = document.getElementById("botaoTema");
+
+    if (botaoTema) {
+      botaoTema.addEventListener("click", function() {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+          botaoTema.textContent = "☀️ Light Mode";
+        } else {
+          botaoTema.textContent = "🌙 Dark Mode";
+        }
+      });
+    }
   </script>
 </body>
 </html>
