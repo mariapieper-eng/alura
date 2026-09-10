@@ -50,6 +50,17 @@
         }
       });
     });
+    // Seleciona os botões de reação em qualquer <article> presente na página
+const botoesReacao = document.querySelectorAll("article button");
+
+botoesReacao.forEach(function(botao) {
+  botao.addEventListener("click", function() {
+    let texto = botao.querySelector("span");
+    if (texto) {
+      texto.textContent = Number(texto.textContent) + 1;
+    }
+  });
+});
 
     // Lógica do Modo Escuro
     const botaoTema = document.getElementById("botaoTema");
