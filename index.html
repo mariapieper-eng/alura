@@ -1,84 +1,45 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-  <style>
-header {
-background-color: #CDC8E3;
-color: #1A0323;
-text-align: center;
-max-width: 800px;
-margin: 0 auto;
-padding: 16px;
-border: 5px solid #1A0323;
-}
-main {
-background-color: #1A0323;
-color: #CDC8E3;
-max-width: 800px;
-margin: 0 auto;
-padding: 16px;
-}
-article{
-display: flex;
-}
-    img {
-width: 120px;
-height: 120px;
-}
-    .artigo-autor {
-font-weight: bold;
-}
-  </style>
- 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Falando de Honkai: Star Rail</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-  <body>
-    <header>
-  <h1>Falando de Honkai: Star Rail</h1>
-  <p1>Aqui vou compartilhar ideias, teorias, opinião detalhes da história de Honkai: Star Rail.</p1>
-      <button id="botaoTema">🌙 Dark Mode</button>
-      </header>
-    <main>
-      <article>
-      <img src="Gemini_Generated_Image_jeaci1jeaci1jeac.png" alt="Um retrato em estilo pixel art do Dr. Ratio de Honkai: Star Rail segurando um cubo geométrico brilhante contra um fundo estelar.">
+<body>
+  <header>
+    <h1>Falando de Honkai: Star Rail</h1>
+    <p>Aqui vou compartilhar ideias, teorias, opinião detalhes da história de Honkai: Star Rail.</p>
+    <button id="botaoTema">🌙 Dark Mode</button>
+  </header>
+  
+  <main>
+    <article>
+      <img src="Gemini_Generated_Image_jeaci1jeaci1jeac.png" alt="Um retrato em estilo pixel art do Dr. Ratio">
       <div>
-    <h2>Meu primeiro post</h2>
-    <p class="artigo-autor">Por:  Pieper</p>
-    <p>Bem-vindos ao meu blog! Aqui vou compartilhar informação e teorias sobre o Dr. Ratio de HSR.</p>
-  <button>❤️<span>0</span></button>
- <button>👎<span>0</span></button>
-  </div>
-      </article>
-
-       <article>
-      <img src="Gemini_Generated_Image_jeaci1jeaci1jeac.png" alt="Um retrato em estilo pixel art do Dr. Ratio de Honkai: Star Rail segurando um cubo geométrico brilhante contra um fundo estelar.">
-      <div>
-    <h2>Meu primeiro post</h2>
-    <p class="artigo-autor">Por: Maria Pieper</p>
-    <p>Bem-vindos ao meu blog! Aqui vou compartilhar informação e teorias sobre o Dr. Ratio de HSR.</p>
-  <button>❤️<span>0</span></button>
- <button>👎<span>0</span></button>
-  </div>
-      </article>
-      
+        <h2>Meu primeiro post</h2>
+        <p class="artigo-autor">Por: Pieper</p>
+        <p>Bem-vindos ao meu blog! Aqui vou compartilhar informação e teorias sobre o Dr. Ratio de HSR.</p>
+        <button class="btn-like">❤️ <span>0</span></button>
+        <button class="btn-dislike">👎 <span>0</span></button>
+      </div>
+    </article>
   </main>
-   </body>
 
   <script>
-    const botoes = document.querySelectorAll("button");
-    botoes.forEach(function(botao) {
+    // Seleciona apenas os botões que possuem a tag span (curtidas/descurtidas)
+    const botoesReacao = document.querySelectorAll("article button");
+    botoesReacao.forEach(function(botao) {
       botao.addEventListener("click", function() {
         let texto = botao.querySelector("span");
         if (texto) {
-          texto.textContent++;
+          texto.textContent = Number(texto.textContent) + 1;
         }
       });
     });
-     const botaoTema = document.getElementById("botaoTema");
 
+    // Lógica do Modo Escuro
+    const botaoTema = document.getElementById("botaoTema");
     if (botaoTema) {
       botaoTema.addEventListener("click", function() {
         document.body.classList.toggle("dark-mode");
